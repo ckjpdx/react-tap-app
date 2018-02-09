@@ -16,6 +16,7 @@ function NavHeader(){
           #flex-container {
             display: flex;
             justify-content: space-around;
+            align-items: center;
           }
           p {
             font-size: 0.8em;

@@ -6,13 +6,8 @@ import KegList from './KegList';
 import NavHeader from './NavHeader';
 
 function App(){
-  let topFlexBar = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: 20
-  };
   return (
-    <section>
+    <div>
       <style jsx global>{`
         * {
           text-align: center;
@@ -24,9 +19,28 @@ function App(){
         img {
           width: 100%
         }
+        h1, h2, h3 {
+          font-family: 'Kalam', cursive;
+          font-size: 2.5em;
+          text-transform: uppercase
+        }
+        h2 {
+          font-size 2em
+        }
+        h3 {
+          font-size: 1.75em
+        }
       `}</style>
-    <div style={topFlexBar}>
-        <h1>React Tap App</h1>
+      <style jsx>{`
+          #top-flex-bar {
+            display: flex;
+            background: red;
+            justify-content: space-between;
+            padding: 15px;
+          }
+      `}</style>
+      <div id='top-flex-bar'>
+        <h1>Sandy Hut</h1>
         <NavHeader/>
       </div>
       <Switch>
@@ -34,7 +48,7 @@ function App(){
         <Route path='/keglist' component={KegList} />
         <Route component={Error404}/>
       </Switch>
-    </section>
+    </div>
   );
 }
 

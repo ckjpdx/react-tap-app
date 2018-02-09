@@ -40,3 +40,7 @@ ListedItem.jsx >> Cannot prop type check the properties of "prop":
 >keg.name
 
 ...where "keg" is the prop, and "name" is the *property* of "prop".
+
+Styling Links >> had to place their styles in-line, styled-jsx does not work.
+
+Changing styles in the dev console >> doesn't seem to work. This can make tweaking CSS difficult.
