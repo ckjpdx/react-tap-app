@@ -33,6 +33,10 @@ Installation:
 
 
 ## Notes
-I tried starting up my original tap-app angular cli project but was unable to get it started: an error message was telling me that 'ng serve' can only be performed inside an angular cli project. This was after I installed all npm packages, global dependencies, and the angular cli in the home directory.
+I tried starting up my original tap-app angular cli project but was unable to get it started: an error message was telling me that 'ng serve' can only be performed inside an angular cli project. This was after I installed all npm packages, global dependencies, and the angular cli in the home directory. _I need to go back and solidify my understanding of angular project configs._
 
-I need to go back and solidify my understanding of angular project configs.
+ListedItem.jsx >> Cannot prop type check the properties of "prop":
+
+>keg.name
+
+...where "keg" is the prop, and "name" is the *property* of "prop".
