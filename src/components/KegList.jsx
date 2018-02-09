@@ -1,4 +1,4 @@
-import React from 'react'; // always import core React library
+import React from 'react';
 import NewKeg from './NewKeg';
 import UseKeg from './UseKeg';
 import DeleteKeg from './DeleteKeg';
