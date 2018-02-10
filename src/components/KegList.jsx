@@ -34,6 +34,9 @@ let kegListArray = [
 function KegList(){
   return (
     <div>
+      <style jsx>{`
+
+      `}</style>
       <h1>KegList</h1>
       {kegListArray.map((keg, i) => <ListedKeg keg={keg} i={i}/> )}
       <NewKeg/>

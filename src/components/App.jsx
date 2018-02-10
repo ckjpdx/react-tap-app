@@ -4,10 +4,11 @@ import Error404 from './Error404';
 import Welcome from './Welcome';
 import KegList from './KegList';
 import NavHeader from './NavHeader';
+import nighttile from './../assets/images/nighttile.jpg';
 
 function App(){
   return (
-    <div>
+    <div style={{background: `url(${nighttile})`}}>
       <style jsx global>{`
         * {
           text-align: center;

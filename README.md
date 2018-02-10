@@ -2,8 +2,13 @@
 
 ## Description
 
-### React vs Angular differences
+![](src/assets/images/component-structure.jpg)
 
+### React vs Angular differences
+* React components contain all the info they need to display and operate, with the exception of data passed through props.
+* Angular components are split into MVC files that also deal with data passed to them.
+
+---
 
 ## Installation
 
@@ -27,20 +32,21 @@ Installation:
 * npm i url-loader@0.6.2 --sav-dev
 * npm i file-loader@1.1.6 --sav-dev
 
-## README Prompts
-* Add a Notes section where you document unforeseen issues and questions you encountered during your development process. Commit these notes by themselves.
-* In your description of the project include your thoughts on the differences in development process in Angular versus React.
-
-
 ## Notes
 I tried starting up my original tap-app angular cli project but was unable to get it started: an error message was telling me that 'ng serve' can only be performed inside an angular cli project. This was after I installed all npm packages, global dependencies, and the angular cli in the home directory. _I need to go back and solidify my understanding of angular project configs._
 
 ListedItem.jsx >> Cannot prop type check the properties of "prop":
 
->keg.name
+> keg.name
 
 ...where "keg" is the prop, and "name" is the *property* of "prop".
 
 Styling Links >> had to place their styles in-line, styled-jsx does not work.
 
 Changing styles in the dev console >> doesn't seem to work. This can make tweaking CSS difficult.
+
+Using ID more than once? >> on ListedItems I was able to style with an ID more than once when I probably should have used a class to do this. I'm assuming React's hash-ID system is preventing these from colliding?
+
+## Plans
+
+Apply the background image to Body so it covers the entire window area.

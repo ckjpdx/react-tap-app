@@ -7,7 +7,7 @@ function NavHeader(){
     color: 'black',
     padding: 10,
     margin: 5,
-    background: 'gray',
+    background: 'orange',
     borderRadius: 5
   }
   return (
@@ -20,7 +20,7 @@ function NavHeader(){
           }
           p {
             font-size: 0.8em;
-            color: orange;
+            color: black;
             text-transform: uppercase;
             letter-spacing: 5px;
 
