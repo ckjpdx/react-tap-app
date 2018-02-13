@@ -5,14 +5,16 @@
 ![](src/assets/images/component-structure.jpg)
 
 ### React vs Angular differences
-* React components contain all the info they need to display and operate, with the exception of data passed through props.
-* Angular components are split into MVC files that also deal with data passed to them.
+| React | Angular |
+|:---:|:---:|
+| React components contain all the info they need to display and operate, with the exception of data passed through props. | Angular components are split into MVC files that also deal with data passed to them. |
+| Data can only flow down, from state that is kept in a mutual common ancestor component. | Data can flow in any direction, but is always stored from the top most App component. |
+| Functionality is broken down into granular components that each handle a specific function | Functionality is contained in larger files that handle more aspects. |
 
 ---
 
 ## Installation
 
-Installation:
 * npm init  
 * npm i react@15.5.4 react-dom@15.5.4 --save  
 * npm i webpack@3.4.0 --save-dev  
@@ -49,4 +51,5 @@ Using ID more than once? >> on ListedItems I was able to style with an ID more t
 
 ## Plans
 
-Apply the background image to Body so it covers the entire window area.
+* Apply the background image to Body so it covers the entire window area.
+* Improve styles throughout the site
