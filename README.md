@@ -2,7 +2,7 @@
 
 ## Description
 
-![](src/assets/images/react-tap-app-atomic-design.png)
+![](src/assets/images/react-tap-app-atomic-design2.png)
 
 ### React vs Angular differences
 | React | Angular |
