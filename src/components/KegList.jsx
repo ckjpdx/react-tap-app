@@ -33,10 +33,8 @@ class KegList extends React.Component {
         <AddKegForm onAddKegSubmit={this.handleAddKegSubmit} />
         <h1>KegList</h1>
         {Object.keys(this.state.masterKegList).map((kegId) => {
-          console.log(kegId);
           let keggy = this.state.masterKegList[kegId];
-          console.log(keggy);
-          return <h1>(keggy)</h1>;
+          return <ListedKeg keg={keggy} i={kegId} key={kegId} />;
         })}
       </div>
     );
