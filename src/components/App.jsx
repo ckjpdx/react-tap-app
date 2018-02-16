@@ -8,7 +8,7 @@ import nighttile from './../assets/images/nighttile.jpg';
 
 function App(){
   return (
-    <div style={{background: `url(${nighttile})`, 'height': '100%'}}>
+    <div style={{background: `url(${nighttile})`, 'minHeight': '100%'}}>
       <style jsx global>{`
         * {
           text-align: center;
@@ -19,6 +19,7 @@ function App(){
         }
         html, body, #react-app-root {
           height: 100%;
+          overflow: show;
         }
         img {
           width: 100%

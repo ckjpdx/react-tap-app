@@ -9,7 +9,8 @@ function AddKegForm(props){
   let _alcoholContent = null;
 
   function handleInputs(){
-    props.onAddKegSubmit(v4(), {name: _name.value, brand: _brand.value, price: _price.value, alcoholContent: _alcoholContent.value});
+    props.onAddKegSubmit(v4(), {name: _name.value, brand: _brand.value, price: _price.value, alcoholContent: _alcoholContent.value, volume: 10});
+    _name.value = _price.value = _alcoholContent.value = _brand.value = '';
   }
 
   return (
