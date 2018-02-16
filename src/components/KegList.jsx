@@ -22,6 +22,7 @@ class KegList extends React.Component {
       }
     };
     this.handleAddKegSubmit = this.handleAddKegSubmit.bind(this);
+    this.handleKegDelete = this.handleKegDelete.bind(this);
   }
 
   handleAddKegSubmit(uuid, kegToAdd) {
@@ -31,14 +32,25 @@ class KegList extends React.Component {
     this.setState({masterKegList: newMasterKegList});
   }
 
+  handleKegDelete(kegId){
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    delete newMasterKegList[kegId];
+    this.setState({masterKegList: newMasterKegList});
+  }
+
   render(){
     return (
       <div>
         <AddKegForm onAddKegSubmit={this.handleAddKegSubmit} />
         <h1>KegList</h1>
         {Object.keys(this.state.masterKegList).map((kegId, index) => {
-          let keggy = this.state.masterKegList[kegId];
-          return <ListedKeg keg={keggy} i={index} id={kegId} key={kegId} />;
+          let keg = this.state.masterKegList[kegId];
+          return <ListedKeg
+            keg={keg}
+            i={index}
+            id={kegId}
+            key={kegId}
+            onKegDelete={this.handleKegDelete} />;
         })}
       </div>
     );

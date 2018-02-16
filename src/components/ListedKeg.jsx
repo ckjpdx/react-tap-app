@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ListedKeg(props){
+  function handleKegDelete(){
+    props.onKegDelete(props.id);
+  }
   return (
     <div id='keg-card'>
       <style jsx>{`
@@ -18,6 +21,7 @@ function ListedKeg(props){
       <p>by {props.keg.brand}</p>
       <p>$ {props.keg.price}</p>
       <p>abv: {props.keg.alcoholContent} %</p>
+      <button onClick={handleKegDelete}>Delete</button>
     </div>
   );
 }
@@ -25,7 +29,8 @@ function ListedKeg(props){
 ListedKeg.propTypes = {
   keg: PropTypes.object.isRequired,
   i: PropTypes.number.isRequired,
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  onKegDelete: PropTypes.func.isRequired
 };
 
 export default ListedKeg;
