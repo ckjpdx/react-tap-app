@@ -8,7 +8,7 @@ import nighttile from './../assets/images/nighttile.jpg';
 
 function App(){
   return (
-    <div style={{background: `url(${nighttile})`}}>
+    <div style={{background: `url(${nighttile})`, 'height': '100%'}}>
       <style jsx global>{`
         * {
           text-align: center;
@@ -16,6 +16,9 @@ function App(){
           padding: 0;
           box-sizing: border-box;
           list-style: none;
+        }
+        html, body, #react-app-root {
+          height: 100%;
         }
         img {
           width: 100%
@@ -39,16 +42,21 @@ function App(){
             justify-content: space-between;
             padding: 15px;
           }
+          #switch {
+            margin: 20px 5px;
+          }
       `}</style>
       <div id='top-flex-bar'>
         <h1>Sandy Hut</h1>
         <NavHeader/>
       </div>
-      <Switch>
-        <Route exact path='/' component={Welcome} />
-        <Route path='/keglist' component={KegList} />
-        <Route component={Error404}/>
-      </Switch>
+      <div id='switch'>
+        <Switch>
+          <Route exact path='/' component={Welcome} />
+          <Route path='/keglist' component={KegList} />
+          <Route component={Error404}/>
+        </Switch>
+      </div>
     </div>
   );
 }

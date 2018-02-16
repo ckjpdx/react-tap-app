@@ -13,7 +13,8 @@ function ListedKeg(props){
         }
       `}</style>
       <hr/>
-      <h3>{props.i}. {props.keg.name}</h3>
+      <h3>{props.i + 1}. {props.keg.name}</h3>
+      <p>ID: {props.id}</p>
       <p>by {props.keg.brand}</p>
       <p>$ {props.keg.price}</p>
       <p>abv: {props.keg.alcoholContent} %</p>
@@ -23,7 +24,8 @@ function ListedKeg(props){
 
 ListedKeg.propTypes = {
   keg: PropTypes.object.isRequired,
-  i: PropTypes.string.isRequired
+  i: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired
 };
 
 export default ListedKeg;

@@ -1,7 +1,6 @@
 import React from 'react';
 import AddKegForm from './AddKegForm';
 import ListedKeg from './ListedKeg';
-import v4 from 'uuid';
 
 class KegList extends React.Component {
   constructor(props){
@@ -25,10 +24,9 @@ class KegList extends React.Component {
     this.handleAddKegSubmit = this.handleAddKegSubmit.bind(this);
   }
 
-  handleAddKegSubmit(kegToAdd) {
-    let newKegId = v4();
+  handleAddKegSubmit(uuid, kegToAdd) {
     let newMasterKegList = Object.assign({}, this.state.masterKegList, {
-      [newKegId]: kegToAdd
+      [uuid]: kegToAdd
     });
     this.setState({masterKegList: newMasterKegList});
   }
@@ -38,9 +36,9 @@ class KegList extends React.Component {
       <div>
         <AddKegForm onAddKegSubmit={this.handleAddKegSubmit} />
         <h1>KegList</h1>
-        {Object.keys(this.state.masterKegList).map((kegId) => {
+        {Object.keys(this.state.masterKegList).map((kegId, index) => {
           let keggy = this.state.masterKegList[kegId];
-          return <ListedKeg keg={keggy} i={kegId} key={kegId} />;
+          return <ListedKeg keg={keggy} i={index} id={kegId} key={kegId} />;
         })}
       </div>
     );

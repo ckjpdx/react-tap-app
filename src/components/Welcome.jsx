@@ -4,6 +4,11 @@ import sandyhut from './../assets/images/sandyhut.jpg';
 function Welcome(){
   return (
     <div>
+      <style jsx>{`
+          img {
+            max-width: 500px;
+          }
+      `}</style>
       <img src={sandyhut}/>
       <h2>Sandy Hut</h2>
       <h3>The Danny DeVito of Divebars</h3>

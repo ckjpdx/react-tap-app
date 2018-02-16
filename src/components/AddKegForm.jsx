@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import v4 from 'uuid';
 
 function AddKegForm(props){
   let _name = null;
@@ -8,7 +9,7 @@ function AddKegForm(props){
   let _alcoholContent = null;
 
   function handleInputs(){
-    props.onAddKegSubmit({name: _name.value, brand: _brand.value, price: _price.value, alcoholContent: _alcoholContent.value});
+    props.onAddKegSubmit(v4(), {name: _name.value, brand: _brand.value, price: _price.value, alcoholContent: _alcoholContent.value});
   }
 
   return (
