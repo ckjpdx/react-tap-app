@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ListedKeg(props){
+  console.log('here');
   return (
     <div id='keg-card'>
       <style jsx>{`
@@ -13,7 +14,7 @@ function ListedKeg(props){
         }
       `}</style>
       <hr/>
-      <h3>{props.i + 1}. {props.keg.name}</h3>
+      <h3>{props.i}. {props.keg.name}</h3>
       <p>by {props.keg.brand}</p>
       <p>$ {props.keg.price}</p>
       <p>abv: {props.keg.alcoholContent} %</p>
@@ -23,7 +24,7 @@ function ListedKeg(props){
 
 ListedKeg.propTypes = {
   keg: PropTypes.object.isRequired,
-  i: PropTypes.number.isRequired
+  i: PropTypes.string.isRequired
 };
 
 export default ListedKeg;

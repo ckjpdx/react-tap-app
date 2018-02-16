@@ -9,7 +9,7 @@ function NavHeader(){
     margin: 5,
     background: 'orange',
     borderRadius: 5
-  }
+  };
   return (
     <div id='flex-container'>
       <style jsx>{`

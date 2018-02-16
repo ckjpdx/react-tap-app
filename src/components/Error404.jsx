@@ -1,4 +1,4 @@
-import React from 'react'; // always import core React library
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Error404(){

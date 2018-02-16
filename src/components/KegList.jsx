@@ -1,49 +1,48 @@
 import React from 'react';
-import NewKeg from './NewKeg';
-import UseKeg from './UseKeg';
-import DeleteKeg from './DeleteKeg';
+import AddKegForm from './AddKegForm';
 import ListedKeg from './ListedKeg';
+import v4 from 'uuid';
 
-let kegListArray = [
-  {
-    name: 'GingaNinja',
-    brand: 'Two Towns',
-    price: '3.50',
-    alcoholContent: '5.2'
-  },
-  {
-    name: 'Nights of Chris-Lumbus',
-    brand: 'Geno-Ciders',
-    price: '6.50',
-    alcoholContent: '7.5'
-  },
-  {
-    name: 'Over Hopulation',
-    brand: 'Barley Brown\'s Beer',
-    price: '6.00',
-    alcoholContent: '8.5'
-  },
-  {
-    name: 'Black (黑)',
-    brand: 'Mikkeller',
-    price: '9.00',
-    alcoholContent: '17.5'
+class KegList extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      masterKegList: {
+        0: {
+          name: 'GingaNinja',
+          brand: 'Two Towns',
+          price: '3.50',
+          alcoholContent: '5.2'
+        }
+      }
+    };
+    this.handleAddKegSubmit = this.handleAddKegSubmit.bind(this);
   }
-];
 
-function KegList(){
-  return (
-    <div>
-      <style jsx>{`
+  handleAddKegSubmit(kegToAdd) {
+    let newKegId = v4();
+    let newMasterKegList = Object.assign({}, this.state.masterKegList, {
+      [newKegId]: kegToAdd
+    });
+    this.setState({masterKegList: newMasterKegList});
+  }
 
-      `}</style>
-      <h1>KegList</h1>
-      {kegListArray.map((keg, i) => <ListedKeg keg={keg} i={i}/> )}
-      <NewKeg/>
-      <UseKeg/>
-      <DeleteKeg/>
-    </div>
-  );
+  render(){
+    return (
+      <div>
+        <style jsx>{`
+
+          `}</style>
+        <h1>KegList</h1>
+        {Object.keys(this.state.masterKegList).forEach(kegId => {
+          let keg = this.state.masterKegList[kegId];
+          console.log(keg);
+          console.log(kegId);
+          return <ListedKeg keg={keg} key={kegId} i={kegId} />;
+        })}
+      </div>
+    );
+  }
 }
 
 export default KegList;
