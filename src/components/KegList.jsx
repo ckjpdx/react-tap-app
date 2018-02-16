@@ -9,10 +9,16 @@ class KegList extends React.Component {
     this.state = {
       masterKegList: {
         0: {
-          name: 'GingaNinja',
+          name: 'Aphix Twin',
           brand: 'Two Towns',
-          price: '3.50',
+          price: '4.50',
           alcoholContent: '5.2'
+        },
+        1: {
+          name: 'Hop-lite',
+          brand: 'Mount Olympia',
+          price: '5.00',
+          alcoholContent: '6.4'
         }
       }
     };

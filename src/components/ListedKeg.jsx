@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 function ListedKeg(props){
   return (
     <div id='keg-card'>
-      <h2>ListedKeg</h2>
       <style jsx>{`
         #keg-card {
           width: 90%;
