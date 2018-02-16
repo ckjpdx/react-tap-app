@@ -2,7 +2,7 @@
 
 ## Description
 
-![](src/assets/images/component-structure.jpg)
+![](src/assets/images/component-tree-structure.jpg)
 
 ### React vs Angular differences
 | React | Angular |
