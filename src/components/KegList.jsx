@@ -30,15 +30,11 @@ class KegList extends React.Component {
   render(){
     return (
       <div>
-        <style jsx>{`
-
-          `}</style>
+        <AddKegForm onAddKegSubmit={this.handleAddKegSubmit} />
         <h1>KegList</h1>
         {Object.keys(this.state.masterKegList).forEach(kegId => {
-          let keg = this.state.masterKegList[kegId];
-          console.log(keg);
-          console.log(kegId);
-          return <ListedKeg keg={keg} key={kegId} i={kegId} />;
+          let keggy = this.state.masterKegList[kegId];
+          return <ListedKeg keg={keggy} key={kegId} i={kegId} />;
         })}
       </div>
     );
