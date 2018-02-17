@@ -5,7 +5,6 @@ import EditDetail from './EditDetail';
 
 class KegList extends React.Component {
   constructor(props){
-    let _detailEditInput = null;
     super(props);
     this.state = {
       masterKegList: {
@@ -62,8 +61,11 @@ class KegList extends React.Component {
     this.setState({selectedDetail: detailFromOnClick});
   }
 
-  handleUpdateDetail(){
-    let updatedDetail = _detailEditInput.value;
+  handleUpdateDetail(newDetail){
+    const selector = this.state.selectedDetail;
+    let newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[selector.id][selector.detail] = newDetail;
+    this.setState({masterKegList: newMasterKegList});
   }
 
   render(){
