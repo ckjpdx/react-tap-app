@@ -2,7 +2,7 @@
 
 ## Description
 
-![](src/assets/images/react-tap-app-atomic-design.png)
+![React Component Atomic Design](src/assets/images/react-tap-app-atomic-design3.png)
 
 ### React vs Angular differences
 | React | Angular |
@@ -51,6 +51,6 @@ Using ID more than once? >> on ListedItems I was able to style with an ID more t
 
 ## Plans
 
-* Move Edit form into functional component
-* Apply the background image to Body so it covers the entire window area.
-* Improve styles throughout the site
+[x] Move Edit form into functional component
+[x] Apply the background image to Body so it covers the entire window area.
+[ ] Improve styles throughout the site
