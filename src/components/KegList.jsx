@@ -28,7 +28,7 @@ class KegList extends React.Component {
     this.handleAddKegSubmit = this.handleAddKegSubmit.bind(this);
     this.handleKegDelete = this.handleKegDelete.bind(this);
     this.handlePour = this.handlePour.bind(this);
-    this.handleDetailToEdit = this.handleDetailToEdit.bind(this);
+    this.handleSelectDetail = this.handleSelectDetail.bind(this);
     this.handleUpdateDetail = this.handleUpdateDetail.bind(this);
   }
 
@@ -57,7 +57,7 @@ class KegList extends React.Component {
     this.setState({masterKegList: newMasterKegList});
   }
 
-  handleDetailToEdit(detailFromOnClick){
+  handleSelectDetail(detailFromOnClick){
     this.setState({selectedDetail: detailFromOnClick});
   }
 
@@ -82,7 +82,7 @@ class KegList extends React.Component {
             key={kegId}
             onKegDelete={this.handleKegDelete}
             onPour={this.handlePour}
-            onDetailToEdit={this.handleDetailToEdit} />;
+            onSelectDetail={this.handleSelectDetail} />;
         })}
         <EditDetail onUpdateDetail={this.handleUpdateDetail} selectedDetail={this.state.selectedDetail}/>
       </div>

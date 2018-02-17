@@ -10,19 +10,19 @@ function ListedKeg(props){
     props.onPour(props.id);
   }
   function handleDetailName(){
-    props.onDetailToEdit({id: props.id, detail: 'name'});
+    props.onSelectDetail({id: props.id, detail: 'name'});
   }
   function handleDetailBrand(){
-    props.onDetailToEdit({id: props.id, detail: 'brand'});
+    props.onSelectDetail({id: props.id, detail: 'brand'});
   }
   function handleDetailPrice(){
-    props.onDetailToEdit({id: props.id, detail: 'price'});
+    props.onSelectDetail({id: props.id, detail: 'price'});
   }
   function handleDetailAlcoholContent(){
-    props.onDetailToEdit({id: props.id, detail: 'alcoholContent'});
+    props.onSelectDetail({id: props.id, detail: 'alcoholContent'});
   }
   function handleDetailVolume(){
-    props.onDetailToEdit({id: props.id, detail: 'volume'});
+    props.onSelectDetail({id: props.id, detail: 'volume'});
   }
 
   return (
@@ -54,7 +54,7 @@ ListedKeg.propTypes = {
   id: PropTypes.string.isRequired,
   onKegDelete: PropTypes.func.isRequired,
   onPour: PropTypes.func.isRequired,
-  onDetailToEdit: PropTypes.func.isRequired
+  onSelectDetail: PropTypes.func.isRequired
 };
 
 export default ListedKeg;
