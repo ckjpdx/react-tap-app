@@ -51,5 +51,6 @@ Using ID more than once? >> on ListedItems I was able to style with an ID more t
 
 ## Plans
 
+* Move Edit form into functional component
 * Apply the background image to Body so it covers the entire window area.
 * Improve styles throughout the site

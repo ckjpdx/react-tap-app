@@ -1,9 +1,11 @@
 import React from 'react';
 import AddKegForm from './AddKegForm';
 import ListedKeg from './ListedKeg';
+import EditDetail from './EditDetail';
 
 class KegList extends React.Component {
   constructor(props){
+    let _detailEditInput = null;
     super(props);
     this.state = {
       masterKegList: {
@@ -21,11 +23,14 @@ class KegList extends React.Component {
           alcoholContent: '6.4',
           volume: 10
         }
-      }
+      },
+      selectedDetail: {}
     };
     this.handleAddKegSubmit = this.handleAddKegSubmit.bind(this);
     this.handleKegDelete = this.handleKegDelete.bind(this);
     this.handlePour = this.handlePour.bind(this);
+    this.handleDetailToEdit = this.handleDetailToEdit.bind(this);
+    this.handleUpdateDetail = this.handleUpdateDetail.bind(this);
   }
 
   handleAddKegSubmit(uuid, kegToAdd) {
@@ -53,6 +58,14 @@ class KegList extends React.Component {
     this.setState({masterKegList: newMasterKegList});
   }
 
+  handleDetailToEdit(detailFromOnClick){
+    this.setState({selectedDetail: detailFromOnClick});
+  }
+
+  handleUpdateDetail(){
+    let updatedDetail = _detailEditInput.value;
+  }
+
   render(){
     return (
       <div>
@@ -66,8 +79,10 @@ class KegList extends React.Component {
             id={kegId}
             key={kegId}
             onKegDelete={this.handleKegDelete}
-            onPour={this.handlePour} />;
+            onPour={this.handlePour}
+            onDetailToEdit={this.handleDetailToEdit} />;
         })}
+        <EditDetail onUpdateDetail={this.handleUpdateDetail} />
       </div>
     );
   }

@@ -2,13 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ListedKeg(props){
+  let _detailToEdit = null;
+
   function handleKegDelete(){
     props.onKegDelete(props.id);
   }
   function handlePour(){
     props.onPour(props.id);
   }
-  
+  function handleDetailToEdit(){
+    // console.log(props.keg[_detailToEdit]);
+    props.onDetailToEdit({id: props.id, detail: _detailToEdit});
+  }
+
   return (
     <div id='keg-card'>
       <style jsx>{`
@@ -20,7 +26,7 @@ function ListedKeg(props){
           background: red;
         }
       `}</style>
-      <h3>{props.i + 1}. {props.keg.name}</h3>
+    <h3 onClick={handleDetailToEdit} ref={input => _detailToEdit = 'name'}>{props.i + 1}. {props.keg.name}</h3>
       <p>ID: {props.id}</p>
       <p>by {props.keg.brand}</p>
       <p>$ {props.keg.price}</p>
