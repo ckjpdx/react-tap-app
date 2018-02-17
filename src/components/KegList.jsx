@@ -84,7 +84,7 @@ class KegList extends React.Component {
             onPour={this.handlePour}
             onDetailToEdit={this.handleDetailToEdit} />;
         })}
-        <EditDetail onUpdateDetail={this.handleUpdateDetail} />
+        <EditDetail onUpdateDetail={this.handleUpdateDetail} selectedDetail={this.state.selectedDetail}/>
       </div>
     );
   }

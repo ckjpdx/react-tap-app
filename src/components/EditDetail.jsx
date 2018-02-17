@@ -12,7 +12,8 @@ function EditDetail(props){
 
   return (
     <div>
-      <h3>Edit Detail:</h3>
+      <h3>Edit Detail: {props.selectedDetail.detail}</h3>
+      <p>ID: {props.selectedDetail.id}</p>
       <input ref={input => _detailEditInput = input}></input>
       <button onClick={handleEditInput}>Commit</button>
     </div>
@@ -20,7 +21,8 @@ function EditDetail(props){
 }
 
 EditDetail.propTypes = {
-  onUpdateDetail: PropTypes.func
+  onUpdateDetail: PropTypes.func,
+  selectedDetail: PropTypes.object
 };
 
 export default EditDetail;

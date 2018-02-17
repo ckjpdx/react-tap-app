@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ListedKeg(props){
-  let _detailToEdit = null;
 
   function handleKegDelete(){
     props.onKegDelete(props.id);
@@ -10,9 +9,20 @@ function ListedKeg(props){
   function handlePour(){
     props.onPour(props.id);
   }
-  function handleDetailToEdit(){
-    // console.log(props.keg[_detailToEdit]);
-    props.onDetailToEdit({id: props.id, detail: _detailToEdit});
+  function handleDetailName(){
+    props.onDetailToEdit({id: props.id, detail: 'name'});
+  }
+  function handleDetailBrand(){
+    props.onDetailToEdit({id: props.id, detail: 'brand'});
+  }
+  function handleDetailPrice(){
+    props.onDetailToEdit({id: props.id, detail: 'price'});
+  }
+  function handleDetailAlcoholContent(){
+    props.onDetailToEdit({id: props.id, detail: 'alcoholContent'});
+  }
+  function handleDetailVolume(){
+    props.onDetailToEdit({id: props.id, detail: 'volume'});
   }
 
   return (
@@ -26,12 +36,12 @@ function ListedKeg(props){
           background: red;
         }
       `}</style>
-    <h3 onClick={handleDetailToEdit} ref={input => _detailToEdit = 'name'}>{props.i + 1}. {props.keg.name}</h3>
+      <h3 onClick={handleDetailName}>{props.i + 1}. {props.keg.name}</h3>
       <p>ID: {props.id}</p>
-      <p>by {props.keg.brand}</p>
-      <p>$ {props.keg.price}</p>
-      <p>abv: {props.keg.alcoholContent} %</p>
-      <p>volume: {props.keg.volume} pt(s)</p>
+      <p onClick={handleDetailBrand}>by {props.keg.brand}</p>
+      <p onClick={handleDetailPrice}>$ {props.keg.price}</p>
+      <p onClick={handleDetailAlcoholContent}>abv: {props.keg.alcoholContent} %</p>
+      <p onClick={handleDetailVolume}>volume: {props.keg.volume} pt(s)</p>
       <button onClick={handleKegDelete}>Delete</button>
       <button onClick={handlePour}>Pour</button>
     </div>
@@ -43,7 +53,8 @@ ListedKeg.propTypes = {
   i: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   onKegDelete: PropTypes.func.isRequired,
-  onPour: PropTypes.func.isRequired
+  onPour: PropTypes.func.isRequired,
+  onDetailToEdit: PropTypes.func.isRequired
 };
 
 export default ListedKeg;
